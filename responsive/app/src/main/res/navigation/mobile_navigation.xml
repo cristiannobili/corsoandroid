@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_tab1">
+
+    <fragment
+        android:id="@+id/nav_tab1"
+        android:name="it.skinjobs.responsive.Tab1Fragment"
+        android:label="Tab1"
+        tools:layout="@layout/fragment_tab1" />
+
+    <fragment
+        android:id="@+id/nav_tab2"
+        android:name="it.skinjobs.responsive.Tab2Fragment"
+        android:label="Tab2"
+        tools:layout="@layout/fragment_tab1" />
+
+    <fragment
+        android:id="@+id/nav_tab3"
+        android:name="it.skinjobs.responsive.Tab3Fragment"
+        android:label="Tab3"
+        tools:layout="@layout/fragment_tab1" />
+
+    <!--<fragment
+        android:id="@+id/nav_settings"
+        android:name="it.skinjobs.responsive.ui.settings.SettingsFragment"
+        android:label="@string/menu_settings"
+        tools:layout="@layout/fragment_settings" />-->
+</navigation>
