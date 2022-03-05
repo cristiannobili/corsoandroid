@@ -28,7 +28,7 @@ public class Tab1Fragment extends Fragment {
         binding = FragmentTab1Binding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        RecyclerView recyclerView = binding.recyclerviewTransform;
+        RecyclerView recyclerView = binding.recyclerviewTab1;
         ListAdapter<String, Tab1ViewHolder> adapter = new Tab1Adapter();
         recyclerView.setAdapter(adapter);
         tab1ViewModel.getTexts().observe(getViewLifecycleOwner(), adapter::submitList);

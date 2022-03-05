@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraint_layout_detail"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".DetailFragment">
+
+    <!--<ImageView
+        android:id="@+id/image_view_item_detail"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_margin="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+         />-->
+
+    <TextView
+        android:id="@+id/text_view_item_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="parent"
+        android:textSize="20sp"
+        tools:text="This is item # xx" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--app:layout_constraintTop_toBottomOf="@id/image_view_item_detail"-->

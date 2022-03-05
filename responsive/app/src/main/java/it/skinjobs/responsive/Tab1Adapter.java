@@ -1,17 +1,22 @@
 package it.skinjobs.responsive;
 
+import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.core.content.res.ResourcesCompat;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.ListAdapter;
 
 import java.util.Arrays;
 import java.util.List;
 
-import it.skinjobs.responsive.databinding.ItemTransformBinding;
+import it.skinjobs.responsive.databinding.ItemTab1Binding;
 
 public class Tab1Adapter extends ListAdapter<String, Tab1ViewHolder> {
 
@@ -50,7 +55,7 @@ public class Tab1Adapter extends ListAdapter<String, Tab1ViewHolder> {
     @NonNull
     @Override
     public Tab1ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        ItemTransformBinding binding = ItemTransformBinding.inflate(LayoutInflater.from(parent.getContext()));
+        ItemTab1Binding binding = ItemTab1Binding.inflate(LayoutInflater.from(parent.getContext()));
         return new Tab1ViewHolder(binding);
     }
 
@@ -61,5 +66,13 @@ public class Tab1Adapter extends ListAdapter<String, Tab1ViewHolder> {
                 ResourcesCompat.getDrawable(holder.imageView.getResources(),
                         drawables.get(position),
                         null));
+        holder.buttonItem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Bundle bundle = new Bundle();
+                bundle.putString("id", holder.getAdapterPosition()+"");
+                Navigation.findNavController(view).navigate(R.id.action_detail, bundle);
+            }
+        });
     }
 }

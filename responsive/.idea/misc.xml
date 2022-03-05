@@ -11,10 +11,13 @@
         <entry key="app/src/main/res/layout-w600dp/actvity_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout-w600dp/fragment_tab1.xml" value="0.25104166666666666" />
         <entry key="app/src/main/res/layout-w800dp-land/activity_main.xml" value="0.346875" />
+        <entry key="app/src/main/res/layout/content_main.xml" value="0.25557244174265453" />
+        <entry key="app/src/main/res/layout/fragment_detail.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_tab1.xml" value="0.33789260385005065" />
         <entry key="app/src/main/res/layout/fragment_tab2.xml" value="0.33789260385005065" />
         <entry key="app/src/main/res/layout/fragment_tab3.xml" value="0.33789260385005065" />
         <entry key="app/src/main/res/layout/header_main.xml" value="0.26358695652173914" />
+        <entry key="app/src/main/res/layout/item_tab1.xml" value="0.24062816616008106" />
         <entry key="app/src/main/res/layout/item_transform.xml" value="0.2069402228976697" />
       </map>
     </option>
