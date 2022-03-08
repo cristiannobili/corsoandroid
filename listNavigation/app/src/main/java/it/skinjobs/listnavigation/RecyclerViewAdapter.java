@@ -28,9 +28,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 
     ArrayList<Todo> todoList;
     Context context;
+    RemoveDelegate delegate;
 
-    public RecyclerViewAdapter() {
+    public RecyclerViewAdapter(RemoveDelegate delegate) {
             this.todoList = new ArrayList<>();
+            this.delegate = delegate;
         }
 
     @NonNull
@@ -46,6 +48,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         Todo todo = this.todoList.get(position);
         ViewHolder viewHolder = (ViewHolder) holder;
         viewHolder.textView.setText(todo.getTitle());
+        viewHolder.buttonDelete.setOnClickListener(view -> {
+            this.delegate.remove(position);
+        });
     }
 
     @Override

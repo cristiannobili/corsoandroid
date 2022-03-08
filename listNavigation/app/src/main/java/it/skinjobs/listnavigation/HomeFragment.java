@@ -18,6 +18,7 @@ import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import it.skinjobs.listnavigation.databinding.FragmentHomeBinding;
 
@@ -36,7 +37,7 @@ public class HomeFragment extends Fragment {
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
         recyclerView = binding.recyclerView;
-        recyclerViewAdapter = new RecyclerViewAdapter();
+        recyclerViewAdapter = new RecyclerViewAdapter(todoViewModel);
         recyclerView.setAdapter(recyclerViewAdapter);
         todoViewModel.getTodoLiveData().observe(this, todoList -> {
             recyclerViewAdapter.update(todoList);
