@@ -21,12 +21,17 @@ public class TodoViewModel extends ViewModel implements RemoveDelegate {
 
     public void init() {
         this.todoList = new ArrayList<>();
-        this.todoList.add(new Todo("Test"));
+        this.todoList.add(new Todo("This is a sample TODO"));
         todoLiveData.setValue(todoList);
     }
 
     public void remove(int position) {
         todoList.remove(position);
+        todoLiveData.setValue(todoList);
+    }
+
+    public void add(String title) {
+        todoList.add(new Todo(title));
         todoLiveData.setValue(todoList);
     }
 }

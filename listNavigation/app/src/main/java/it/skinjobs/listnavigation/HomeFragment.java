@@ -2,10 +2,12 @@ package it.skinjobs.listnavigation;
 
 import android.app.Application;
 import android.os.Bundle;
+import android.text.Editable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -42,12 +44,21 @@ public class HomeFragment extends Fragment {
         todoViewModel.getTodoLiveData().observe(this, todoList -> {
             recyclerViewAdapter.update(todoList);
         });
+        EditText editText = binding.editText;
+        Button addButton = binding.buttonAdd;
+        addButton.setOnClickListener(view -> {
+            String value = editText.getText().toString();
+            if (!value.equals("")) {
+                todoViewModel.add(value.toString());
+                editText.setText("");
+            }
+        });
         return root;
     }
 
-    /*@Override
+    @Override
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
-    }*/
+    }
 }
