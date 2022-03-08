@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TodoViewModel extends ViewModel implements RemoveDelegate {
+public class TodoViewModel extends ViewModel implements ItemDelegate {
     private MutableLiveData<List<Todo>> todoLiveData;
     ArrayList<Todo> todoList;
 
@@ -27,6 +27,13 @@ public class TodoViewModel extends ViewModel implements RemoveDelegate {
 
     public void remove(int position) {
         todoList.remove(position);
+        todoLiveData.setValue(todoList);
+    }
+
+    @Override
+    public void complete(int position) {
+        Todo todo = todoList.get(position);
+        todo.setComplete(true);
         todoLiveData.setValue(todoList);
     }
 

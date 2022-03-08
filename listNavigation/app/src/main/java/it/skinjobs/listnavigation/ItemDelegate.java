@@ -1,5 +1,6 @@
 package it.skinjobs.listnavigation;
 
-public interface RemoveDelegate {
+public interface ItemDelegate {
     void remove(int position);
+    void complete(int position);
 }

@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -17,20 +18,22 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 
     class ViewHolder extends RecyclerView.ViewHolder {
         Button buttonDelete;
+        Button buttonComplete;
         TextView textView;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             buttonDelete = itemView.findViewById(R.id.button_delete);
+            buttonComplete = itemView.findViewById(R.id.button_complete);
             textView = itemView.findViewById(R.id.text_view_title);
         }
     }
 
     ArrayList<Todo> todoList;
     Context context;
-    RemoveDelegate delegate;
+    ItemDelegate delegate;
 
-    public RecyclerViewAdapter(RemoveDelegate delegate) {
+    public RecyclerViewAdapter(ItemDelegate delegate) {
             this.todoList = new ArrayList<>();
             this.delegate = delegate;
         }
@@ -48,8 +51,14 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         Todo todo = this.todoList.get(position);
         ViewHolder viewHolder = (ViewHolder) holder;
         viewHolder.textView.setText(todo.getTitle());
+        if (todo.isComplete()) {
+            viewHolder.textView.setTextColor(ContextCompat.getColor(context, R.color.green));
+        }
         viewHolder.buttonDelete.setOnClickListener(view -> {
             this.delegate.remove(position);
+        });
+        viewHolder.buttonComplete.setOnClickListener(view -> {
+            this.delegate.complete(position);
         });
     }
 
