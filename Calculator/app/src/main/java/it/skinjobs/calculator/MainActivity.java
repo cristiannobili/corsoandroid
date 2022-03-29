@@ -96,15 +96,18 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         }
-
-
             if (value == Math.floor(value)) {
                 Integer result = Math.toIntExact((long)value);
                 resultView.setText(result.toString());
             } else {
-                value = Math.round(value * divider);
-                value = value / divider;
-                resultView.setText(Double.toString(value));
+                if (divider > 0) {
+                    value = Math.round(value * divider);
+                    value = value / divider;
+                    resultView.setText(Double.toString(value));
+                } else {
+                    resultView.setText(Double.toString(value));
+                }
+
             }
 
     }
