@@ -14,6 +14,18 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
+/* rappresenta la classe che controlla la recycler view
+/ vengono implementati:
+
+- la classe viewHolder, che rappresenta il contenitore della view relativa al singolo item
+- il metodo OnCreateViewholder: istanzia il singolo viewHolder (viene eseguito all'inizio quando vengono creati i viewholder)
+- il moetodo onBindViewHolder: collega il viewHolder ai dati (sia in fase di creazione che riciclo)
+- il metodo getItemCount: restituisce la lunghezza della lista
+- il metodo update: aggiorna la lista e quindi le view
+
+IMportante osservare che la proprietà todolist non è il modello dati dell'applicazione, ma solo quello mostrato all'utente
+
+ */
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     class ViewHolder extends RecyclerView.ViewHolder {

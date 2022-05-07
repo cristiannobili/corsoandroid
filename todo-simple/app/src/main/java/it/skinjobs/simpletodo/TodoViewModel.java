@@ -6,6 +6,10 @@ import androidx.lifecycle.ViewModel;
 import java.util.ArrayList;
 import java.util.List;
 
+// questa classe rappresenta il modello dati dell'applicazione
+// di cui quello dell'adapter è una copia
+// contiene i dati del modello (le todo) e i metodi per modificarla
+// implementa l'interfaccia item delegate, per impedire la dipendenza reciproca con l'adapter
 public class TodoViewModel implements ItemDelegate {
 
     ArrayList<Todo> todoList;

@@ -26,10 +26,11 @@ public class HomeFragment extends Fragment {
         binding = FragmentHomeBinding.inflate(inflater, container, false);
 
         View root = binding.getRoot();
-        recyclerView = binding.recyclerView;
+        recyclerView = binding.recyclerView; // viene associata la recycler view
         recyclerViewAdapter = new RecyclerViewAdapter();
-        recyclerView.setAdapter(recyclerViewAdapter);
-        todoViewModel = new TodoViewModel(recyclerViewAdapter);
+        recyclerView.setAdapter(recyclerViewAdapter); // viene assegnata all'adapter
+        todoViewModel = new TodoViewModel(recyclerViewAdapter); // viene creato il view model
+        // viene associato il delegate all'adapter: non si usa la classe per evitare dipendenze circolari
         recyclerViewAdapter.setDelegate(todoViewModel);
         EditText editText = binding.editText;
         Button addButton = binding.buttonAdd;
