@@ -3,8 +3,13 @@ package it.skinjobs.simpletodo;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 // questa classe rappresenta il modello dati dell'applicazione
 // di cui quello dell'adapter è una copia
@@ -40,5 +45,28 @@ public class TodoViewModel implements ItemDelegate {
     public void add(String title) {
         todoList.add(new Todo(title));
         adapter.update(todoList);
+    }
+
+    public String toJson() {
+        JSONArray jsonArray = new JSONArray();
+        for (int i=0; i<this.todoList.size(); i++) {
+            Map<String, String> map = new HashMap<>();
+            map.put("title", this.todoList.get(i).getTitle());
+            map.put("complete", this.todoList.get(i).isComplete()? "true": "false");
+            JSONObject jsonObject = new JSONObject(map);
+            jsonArray.put(jsonObject);
+        }
+        return jsonArray.toString();
+    }
+
+    public void fromJson(String json) throws Exception {
+        this.todoList = new ArrayList<>();
+        JSONArray array = new JSONArray(json);
+        for(int i=0; i< array.length(); i++) {
+            JSONObject object = array.getJSONObject(i);
+            Todo todo = new Todo(object.getString("title"));
+            todo.setComplete(object.getBoolean("complete"));
+            this.todoList.add(todo);
+        }
     }
 }
