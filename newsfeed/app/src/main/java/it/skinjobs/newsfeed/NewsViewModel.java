@@ -53,7 +53,7 @@ public class NewsViewModel implements TaskDelegate, Observer {
 
     @Override
     public void update(String event) {
-            this.adapter.update(new ArrayList<>());
-            this.refresh();
+        this.adapter.update(new ArrayList<>());
+        this.refresh();
     }
 }

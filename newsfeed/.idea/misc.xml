@@ -5,13 +5,14 @@
       <map>
         <entry key="app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.396875" />
         <entry key="app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.396875" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.10307017543859649" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.42239583333333336" />
         <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.7979166666666667" />
         <entry key="app/src/main/res/layout/fragment_destination.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.33789260385005065" />
         <entry key="app/src/main/res/layout/item.xml" value="0.33789260385005065" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.6947916666666667" />
-        <entry key="app/src/main/res/menu/navmenu.xml" value="0.65" />
+        <entry key="app/src/main/res/menu/navmenu.xml" value="0.562962962962963" />
+        <entry key="app/src/main/res/menu/navmenu.xml.xml" value="0.14739583333333334" />
       </map>
     </option>
   </component>

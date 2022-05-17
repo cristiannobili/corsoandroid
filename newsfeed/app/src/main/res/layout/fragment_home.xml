@@ -13,9 +13,8 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:layout_marginTop="16dp"
-        android:layout_weight="1"
         android:foregroundGravity="center"
+        android:layout_weight="1"
         android:minWidth="100dp"
         android:minHeight="100dp"
         android:visibility="visible"
@@ -23,18 +22,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:indeterminate="@color/gray"
-        android:progressTintMode="add"
-
-        />
+        android:secondaryProgressTintMode="add" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="parent"
         app:layoutManager="LinearLayoutManager"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         tools:context=".HomeFragment" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

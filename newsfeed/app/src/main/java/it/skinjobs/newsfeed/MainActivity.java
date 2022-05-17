@@ -3,14 +3,14 @@ package it.skinjobs.newsfeed;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import it.skinjobs.newsfeed.R;
 import it.skinjobs.newsfeed.databinding.ActivityMainBinding;
 
-public class MainActivity extends AppCompatActivity  {
+public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
 

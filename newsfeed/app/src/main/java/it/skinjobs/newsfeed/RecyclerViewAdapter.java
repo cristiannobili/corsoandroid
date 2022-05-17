@@ -19,6 +19,8 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.List;
 
+import it.skinjobs.newsfeed.R;
+
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     class ViewHolder extends RecyclerView.ViewHolder {
@@ -36,8 +38,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     Context context;
 
     public RecyclerViewAdapter() {
-            this.newsList = new ArrayList<>();
-        }
+        this.newsList = new ArrayList<>();
+    }
 
     @NonNull
     @Override
